@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    entrypoint: /bin/sh
+    command: -c "ollama serve & sleep 2 && ollama pull gemma3 && wait"
+    ports:
+      - "11435:11434"
+
+  backend:
+    build: ../backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../backend:/app
+    working_dir: /app
+    command: python main.py
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=gemma3
+      - API_PORT=5000
+
+  frontend:
+    build:
+      context: ../frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend:/frontend
+    working_dir: /frontend
+    command: npm start
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+

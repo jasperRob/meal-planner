@@ -11,7 +11,7 @@ If I was to spend more time, the items I would address are as follows:
 - Fix the duplication of responses. I suspect this issue is to do with the way that the system prompt template is setup.
 - Improved markdown formatting for responses.
 - Adding better support for date and location to provide more suitable recommendations.
-- Experimenting with other models. I tried out the **llama3.2**, **gemma3** and **llava** models, and found **gemma3** to provide the most succinct and well formed responses.
+- Experimenting with other models. I tried out a few of the smaller models including **llama3.2**, **gemma3** and **llava**, and found that **gemma3** provided the most succinct and well formed responses.
 - Experimenting with other frameworks. This is the first time that I have incorporated an llm into a project, so I decided to use langchain as a means of building a somewhat agentic API, and Ollama as a means of hosting a local LLM, in particular because the documentation for both is rather good. It seems that the interaction between these two systems leaves much to be desired, or at least will require a lot more digging through documentation to create a seamless system.
 
 ### Additional Notes

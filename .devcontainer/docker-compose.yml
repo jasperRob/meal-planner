@@ -13,8 +13,6 @@ services:
     build: ../backend
     ports:
       - "5000:5000"
-    volumes:
-      - ../backend:/app
     working_dir: /app
     command: python main.py
     depends_on:
@@ -29,8 +27,6 @@ services:
       context: ../frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ../frontend:/frontend
     working_dir: /frontend
     command: npm start
     depends_on:

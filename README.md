@@ -25,8 +25,6 @@ Clone the repository and change into the project directory:
 git clone git@github.com:jasperRob/meal-planner.git
 cd meal-planner
 ```
-```
-```
 
 Simply run the following command to start up the containers (leave the terminal window open as this will not be detached). Once Ollama has finished starting and pulling the model, you can navigate to `http://localhost:3000` in your browser.
 

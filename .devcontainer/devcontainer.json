@@ -2,13 +2,21 @@
   "name": "Meal Planenr",
   "dockerComposeFile": "docker-compose.yml",
   "service": "backend",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "remoteUser": "vscode",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [5000, 3000, 11435],
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python"
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode"
       ]
     }
-  }
+  },
+  "remoteEnv": {
+    "OLLAMA_BASE_URL": "http://ollama:11434",
+    "OLLAMA_MODEL": "gemma3"
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
 }

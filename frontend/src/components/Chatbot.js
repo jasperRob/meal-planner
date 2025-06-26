@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Chatbot.css';
 import { CHAT_ENDPOINT } from '../config/api';
 import ReactMarkdown from 'react-markdown';

@@ -31,15 +31,17 @@ prompt_template = ChatPromptTemplate.from_messages(
     ]
 )
 
+# ensure ollama url is suppied
 OLLAMA_BASE_URL = os.getenv('OLLAMA_BASE_URL')
 if not OLLAMA_BASE_URL:
     raise Exception("OLLAMA_BASE_URL not provided")
 
+# ensure ollama model is suppied
 OLLAMA_MODEL = os.getenv('OLLAMA_MODEL')
 if not OLLAMA_MODEL:
     raise Exception("OLLAMA_MODEL not provided")
 
-# use llama3.2 model via ollama
+# init llm
 llm = OllamaLLM(model=OLLAMA_MODEL, base_url=OLLAMA_BASE_URL)
 
 

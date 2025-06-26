@@ -4,10 +4,12 @@ from langchain_core.messages import HumanMessage
 from model import chatbot
 import os
 
+# ensure port is supplied
 API_PORT = os.getenv('API_PORT')
 if not API_PORT:
     raise Exception("API_PORT not provided")
 
+# setup flask app
 app = Flask(__name__)
 CORS(app)
 
